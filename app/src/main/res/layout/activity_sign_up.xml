@@ -14,7 +14,7 @@
         android:id="@+id/signupEmail"
         android:layout_width="287dp"
         android:layout_height="41dp"
-        android:layout_marginTop="360dp"
+        android:layout_marginTop="416dp"
         android:background="@drawable/edittext_border"
         android:hint="e-mail"
         android:inputType="textEmailAddress"
@@ -23,11 +23,38 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/signupButton"
+        android:layout_width="218dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="28dp"
+
+        android:backgroundTint="@color/black"
+        android:text="SIGN UP"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/signupPassword" />
+
+    <TextView
+        android:id="@+id/logintext"
+        android:layout_width="328dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="Already registered? Login"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/signupButton" />
+
     <EditText
         android:id="@+id/signupPassword"
         android:layout_width="287dp"
         android:layout_height="41dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="88dp"
         android:background="@drawable/edittext_border"
         android:hint="password"
         android:inputType="textPassword"
@@ -36,30 +63,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/signupEmail" />
 
-    <Button
-        android:id="@+id/signupButton"
-        android:layout_width="218dp"
-        android:layout_height="38dp"
-        android:layout_marginTop="44dp"
-
-        android:backgroundTint="@color/black"
-        android:text="SIGN UP"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signupPassword" />
-
-    <TextView
-        android:id="@+id/logintext"
-        android:layout_width="328dp"
-        android:layout_height="25dp"
-        android:layout_marginTop="16dp"
-        android:gravity="center"
-        android:text="Already registered? Login"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signupButton" />
 </androidx.constraintlayout.widget.ConstraintLayout>
