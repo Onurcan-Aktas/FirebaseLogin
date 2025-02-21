@@ -17,34 +17,40 @@ class SignUpActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding=ActivitySignUpBinding.inflate(layoutInflater)
+        binding = ActivitySignUpBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        firebaseAuth=FirebaseAuth.getInstance()
+        firebaseAuth = FirebaseAuth.getInstance()
 
         binding.signupButton.setOnClickListener {
-            val email=binding.signupEmail.text.toString()
-            val password=binding.signupPassword.text.toString()
+            val email = binding.signupEmail.text.toString()
+            val password = binding.signupPassword.text.toString()
 
 
-            if (email.isNotEmpty()&&password.isNotEmpty()){
-                firebaseAuth.createUserWithEmailAndPassword(email,password)
-                    .addOnCompleteListener(this){task->
-                        if(task.isSuccessful){
-                            Toast.makeText(this,"Signup Succesful!",Toast.LENGTH_LONG).show()
-                            val intent=Intent(this,LoginActivity::class.java)
+            if (email.isNotEmpty() && password.isNotEmpty()) {
+                firebaseAuth.createUserWithEmailAndPassword(email, password)
+                    .addOnCompleteListener(this) { task ->
+                        if (task.isSuccessful) {
+                            Toast.makeText(this, "Signup Succesful!", Toast.LENGTH_LONG).show()
+                            val intent = Intent(this, LoginActivity::class.java)
                             startActivity(intent)
                             finish()
-                        }else{
-                            Toast.makeText(this,"Signup Unseccesful!",Toast.LENGTH_LONG).show()
+                        } else {
+                            Toast.makeText(this, "Signup Unseccesful!", Toast.LENGTH_LONG).show()
 
                         }
                     }
-            }else{
-                Toast.makeText(this,"Please enter valid E-Mail and Password!",Toast.LENGTH_LONG).show()
+            } else {
+                Toast.makeText(this, "Please enter valid E-Mail and Password!", Toast.LENGTH_LONG)
+                    .show()
 
             }
 
+        }
+
+        binding.logintext.setOnClickListener {
+            startActivity(Intent(this,LoginActivity::class.java))
+            finish()
         }
     }
 }
